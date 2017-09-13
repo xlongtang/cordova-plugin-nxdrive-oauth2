@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+Copyright (c) Infobeyond Technologies, Inc.  All Rights Reserved.
+Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
+-->
+<plugin id="cordova-plugin-nxdrive-oauth2" version="0.8.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+  <name>NXdrive OAuth2 Login for Cordova</name>
+  <description>Provides OAuth2 Login for Third Party Applications.</description>
+
+  <license>Apache 2.0</license>
+  <keywords>nxdrive oauth2 login sign</keywords>
+  <repo></repo>
+  <issue></issue>
+
+  <dependency id="cordova-plugin-compat" version="^1.0.0" />
+
+  <engines>
+    <!-- Required gradle functionality support -->
+    <engine name="cordova-android" version=">=4.1.0" />
+    <!-- Cordova 5.4.0 and Windows 4.1.0 are required for framework.target-dir support -->
+    <engine name="cordova" version=">=5.4.0" />
+  </engines>
+
+  <js-module name="utility" src="www/utility.js">
+    <runs />
+  </js-module>
+
+  <js-module name="AuthenticationContext" src="www/AuthenticationContext.js">
+    <clobbers target="Nxdrive.OAuth2.AuthenticationContext" />
+  </js-module>
+
+  <js-module name="CordovaBridge" src="www/CordovaBridge.js"/>
+  <js-module name="AuthenticationResult" src="www/AuthenticationResult.js"/>
+  <js-module name="TokenCache" src="www/TokenCache.js"/>
+  <js-module name="TokenCacheItem" src="www/TokenCacheItem.js"/>
+  <js-module name="UserInfo" src="www/UserInfo.js"/>
+
+  <js-module name="AuthenticationSettings" src="www/AuthenticationSettings.js">
+    <clobbers target="NXdrive.OAuth2.AuthenticationSettings" />
+  </js-module>
+
+  <platform name="android">
+    <info>
+    </info>
+    
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="NXdriveOAuth2">
+        <param name="android-package" value="com.infobeyondtech.identity.CordovaIdentityPlugin"/>
+      </feature>
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+      <activity android:label="@string/app_name"
+                android:name="com.infobeyondtech.identity.TokenActivity"
+                android:theme="@style/AppTheme.NoActionBar"
+                android:windowSoftInputMode="stateHidden">
+      </activity>
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/manifest">
+      <uses-permission android:name="android.permission.INTERNET" />
+      <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+      <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+      <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+      <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    </config-file>
+
+    <!-- dependency -->
+    <framework src="com.android.support:support-v4:+" />
+    <framework src="com.android.support:appcompat-v7:+" />
+    <framework src="com.android.support:design:22.2+" />
+    <framework src="src/android/build-extras.gradle" custom="true" type="gradleReference" />
+
+    <!-- We split the resource strings into two parts: one group specific to one use and
+         one independent of any use. The one specic to uses will be passed as parameters. -->
+
+    <!-- TODO: Maybe we need to use a name which is most likely unique in the target. -->
+    <resource-file src="src/android/settings.xml" target="res/values/nxdrive_auth_settings.xml" />
+    <!-- style -->
+    <resource-file src="src/android/colors.xml" target="res/values/nxdrive_auth_colors.xml" />            
+    <resource-file src="src/android/styles.xml" target="res/values/nxdrive_auth_styles.xml" />        
+    <!-- layout -->
+    <resource-file src="src/android/token_activity.xml" target="res/layout/nxdrive_auth_token_activity.xml" />
+    <!-- image -->
+    <resource-file src="src/android/auth_logo.xml" target="res/drawable/nxdrive_auth_logo.xml" />
+
+    <source-file src="src/android/com/yaoseetech/identity/AuthenticationResult.java" target-dir="src/com/yaoseetech/identity" />
+    <source-file src="src/android/com/yaoseetech/identity/DefaultGlobalR.java" target-dir="src/com/yaoseetech/identity" />
+    <source-file src="src/android/com/yaoseetech/identity/DefaultIdentityProvider.java" target-dir="src/com/yaoseetech/identity" />
+    <source-file src="src/android/com/yaoseetech/identity/IdentityProviderFactory.java" target-dir="src/com/yaoseetech/identity" />
+    <source-file src="src/android/com/yaoseetech/identity/IGlobalR.java" target-dir="src/com/yaoseetech/identity" />
+    <source-file src="src/android/com/yaoseetech/identity/IIdentityProvider.java" target-dir="src/com/yaoseetech/identity" />
+    <source-file src="src/android/com/yaoseetech/identity/LogoutService.java" target-dir="src/com/yaoseetech/identity" />
+
+    <source-file src="src/android/com/infobeyondtech/identity/TokenActivity.java" target-dir="src/com/infobeyondtech/identity" />
+    <source-file src="src/android/com/infobeyondtech/identity/CordovaIdentityPlugin.java" target-dir="src/com/infobeyondtech/identity" />    
+
+  </platform>
+</plugin>
