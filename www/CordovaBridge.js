@@ -40,7 +40,7 @@ var cordovaBridge = {
             deferred.reject(error);
         };
 
-        exec(win, fail, "AzureADB2CProxy", nativeMethodName, args);
+        exec(win, fail, "NXdriveOAuth2", nativeMethodName, args);
 
         return deferred;
     }

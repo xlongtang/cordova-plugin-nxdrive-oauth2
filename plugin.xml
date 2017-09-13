@@ -26,7 +26,7 @@ Licensed under the Apache License, Version 2.0.  See License.txt in the project 
   </js-module>
 
   <js-module name="AuthenticationContext" src="www/AuthenticationContext.js">
-    <clobbers target="Nxdrive.OAuth2.AuthenticationContext" />
+    <clobbers target="NXdrive.OAuth2.AuthenticationContext" />
   </js-module>
 
   <js-module name="CordovaBridge" src="www/CordovaBridge.js"/>
@@ -87,11 +87,11 @@ Licensed under the Apache License, Version 2.0.  See License.txt in the project 
     <source-file src="src/android/com/yaoseetech/identity/AuthenticationResult.java" target-dir="src/com/yaoseetech/identity" />
     <source-file src="src/android/com/yaoseetech/identity/DefaultGlobalR.java" target-dir="src/com/yaoseetech/identity" />
     <source-file src="src/android/com/yaoseetech/identity/DefaultIdentityProvider.java" target-dir="src/com/yaoseetech/identity" />
-    <source-file src="src/android/com/yaoseetech/identity/IdentityProviderFactory.java" target-dir="src/com/yaoseetech/identity" />
     <source-file src="src/android/com/yaoseetech/identity/IGlobalR.java" target-dir="src/com/yaoseetech/identity" />
     <source-file src="src/android/com/yaoseetech/identity/IIdentityProvider.java" target-dir="src/com/yaoseetech/identity" />
     <source-file src="src/android/com/yaoseetech/identity/LogoutService.java" target-dir="src/com/yaoseetech/identity" />
 
+    <source-file src="src/android/com/infobeyondtech/identity/IdentityProviderFactory.java" target-dir="src/com/infobeyondtech/identity" />    
     <source-file src="src/android/com/infobeyondtech/identity/TokenActivity.java" target-dir="src/com/infobeyondtech/identity" />
     <source-file src="src/android/com/infobeyondtech/identity/CordovaIdentityPlugin.java" target-dir="src/com/infobeyondtech/identity" />    
 
