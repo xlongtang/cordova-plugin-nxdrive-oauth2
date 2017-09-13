@@ -82,7 +82,7 @@ Licensed under the Apache License, Version 2.0.  See License.txt in the project 
     <!-- layout -->
     <resource-file src="src/android/token_activity.xml" target="res/layout/nxdrive_auth_token_activity.xml" />
     <!-- image -->
-    <resource-file src="src/android/auth_logo.xml" target="res/drawable/nxdrive_auth_logo.xml" />
+    <resource-file src="src/android/logo.xml" target="res/drawable/nxdrive_auth_logo.xml" />
 
     <source-file src="src/android/com/yaoseetech/identity/AuthenticationResult.java" target-dir="src/com/yaoseetech/identity" />
     <source-file src="src/android/com/yaoseetech/identity/DefaultGlobalR.java" target-dir="src/com/yaoseetech/identity" />
