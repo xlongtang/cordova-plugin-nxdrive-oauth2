@@ -10,7 +10,7 @@ android {
          // replace the below string with your custom redirect scheme. Make sure this is consistent
          // with the values used in idp_configs.xml
          manifestPlaceholders = [
-              'appAuthRedirectScheme': 'com.onmicrosoft.peeroffers.app'
+              'appAuthRedirectScheme': 'com.infobeyondtech.nxdrive.app'
          ]
 
     }

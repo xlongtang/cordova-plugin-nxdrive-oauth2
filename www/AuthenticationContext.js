@@ -61,21 +61,11 @@ AuthenticationContext.prototype.acquireTokenAsync = function (userId) {
 };
 
 /**
- * Redirects a user for editing his or her profile.
- * @param {String} policy
- */
-AuthenticationContext.prototype.editProfileAsync = function (policy) {
-    checkArgs('s', 'AuthenticationContext.editProfileAsync', arguments);    
-};
-
-/**
  * Logouts a user
  * @param {String} policy
  * @returns {Promise} 
  */
 AuthenticationContext.prototype.logoutAsync = function () {
-    checkArgs('ss', 'AuthenticationContext.logoutAsync', arguments);
-
     var d = new Deferred();
 
     bridge.executeNativeMethod('logoutAsync', [
