@@ -1,0 +1,17 @@
+dependencies {
+    compile 'net.openid:appauth:0.7.0'
+    compile 'com.android.support:support-v4:+'
+    compile 'com.android.support:appcompat-v7:+'
+    compile 'com.android.support:design:22.2+'
+}
+
+android {
+    defaultConfig {
+         // replace the below string with your custom redirect scheme. Make sure this is consistent
+         // with the values used in idp_configs.xml
+         manifestPlaceholders = [
+              'appAuthRedirectScheme': 'com.onmicrosoft.peeroffers.app'
+         ]
+
+    }
+}

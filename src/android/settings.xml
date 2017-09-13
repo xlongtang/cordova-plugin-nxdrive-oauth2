@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="nxdrive_name">NXDRIVE</string>
+    <string name="nxdrive_authorize_uri" translatable="false">https://www.nxdrive.com/oauth2/authorize</string>
+    <string name="nxdrive_token_uri" translatable="false">https://www.nxdrive.com/oauth2/token</string>
+
+    <bool name="nxdrive_enabled">true</bool>
+    <string name="nxdrive_logout_uri" translatable="false">https://login.microsoftonline.com/%1$s/oauth2/v2.0/logout?p=%2$s&amp;post_logout_redirect_uri=%3$s</string>
+    
+    <string name="nxdrive_auth_granted">Authorization granted</string>
+    <string name="nxdrive_auth_content_description">Auth logo</string>
+
+    <string name="nxdrive_exchange_notification">Exchanging code for token</string>
+    <string name="nxdrive_authorization_failed">Authorization failed</string>
+    <string name="nxdrive_exchange_complete">Exchange completed successfully</string>n
+
+    <string name="nxdrive_refresh_failed">Token refresh failed</string>
+    <string name="nxdrive_refresh_token">Refresh token</string>
+</resources>
