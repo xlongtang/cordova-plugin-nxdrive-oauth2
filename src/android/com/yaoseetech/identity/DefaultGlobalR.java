@@ -16,12 +16,11 @@ import java.util.Set;
 public class DefaultGlobalR implements IGlobalR {
     private Resources mResources;
     private String mPackageName;
-    private Map<String, String> mMap;
+    private static Map<String, String> mMap = new HashMap<String, String>();;
 
     public DefaultGlobalR(@NonNull Activity activity) {
         this.mResources = activity.getResources();
         this.mPackageName = activity.getPackageName();
-        this.mMap = new HashMap<String, String>();
     }
 
     public int getRStringId(String name) {
