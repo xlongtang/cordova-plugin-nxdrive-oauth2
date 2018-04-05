@@ -1,9 +1,9 @@
 {
-    "name": "cordova-plugin-azure-adb2c",
-    "version": "0.8.1",
-    "description": "Provides Microsoft Azure Active Directory (ADAL) OAuth client.",
+    "name": "cordova-plugin-nxdrive-oauth2",
+    "version": "0.8.2",
+    "description": "Provides OAuth2 Client authentication to NXdrive.",
     "cordova": {
-        "id": "cordova-plugin-azure-adb2c",
+        "id": "cordova-plugin-nxdrive-oauth2",
         "platforms": [
             "android"
         ]
@@ -19,7 +19,7 @@
     },
     "repository": {
         "type": "git",
-        "url": ""
+        "url": "https://github.com/xlongtang/cordova-plugin-nxdrive-oauth2.git"
     },
     "keywords": [
         "microsoft",
@@ -37,5 +37,5 @@
     "bugs": {
         "url": ""
     },
-    "homepage": ""
+    "homepage": "https://www.nxdrive.com"
 }

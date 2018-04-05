@@ -1,4 +1,4 @@
-# cordova-plugin-azure-adb2c
+# cordova-plugin-nxdrive-oauth2
 
 ## Introduction
 
