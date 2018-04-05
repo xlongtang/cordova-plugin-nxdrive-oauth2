@@ -1,0 +1,41 @@
+{
+    "name": "cordova-plugin-azure-adb2c",
+    "version": "0.8.1",
+    "description": "Provides Microsoft Azure Active Directory (ADAL) OAuth client.",
+    "cordova": {
+        "id": "cordova-plugin-azure-adb2c",
+        "platforms": [
+            "android"
+        ]
+    },
+    "engines": {
+        "cordovaDependencies": {
+            "0.8.0": {
+                "cordova-android": ">=4.1.0",
+                "cordova-windows": ">=4.1.0",
+                "cordova": ">=5.4.0"
+            }
+        }
+    },
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "keywords": [
+        "microsoft",
+        "azure",
+        "adal",
+        "b2c",
+        "activedirectory",
+        "ecosystem:cordova",
+        "cordova-android",
+        "cordova-ios",
+        "cordova-windows"
+    ],
+    "author": "Xiaolong Tang",
+    "license": "Apache 2.0",
+    "bugs": {
+        "url": ""
+    },
+    "homepage": ""
+}

@@ -12,8 +12,6 @@ Licensed under the Apache License, Version 2.0.  See License.txt in the project 
   <repo></repo>
   <issue></issue>
 
-  <dependency id="cordova-plugin-compat" version="^1.0.0" />
-
   <engines>
     <!-- Required gradle functionality support -->
     <engine name="cordova-android" version=">=4.1.0" />
