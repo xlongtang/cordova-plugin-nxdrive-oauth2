@@ -33,7 +33,6 @@ import org.json.JSONException;
 
 import java.util.Arrays;
 
-import static org.apache.cordova.device.Device.TAG;
 
 /**
  * Created by xlongtang on 5/11/2017.
@@ -46,6 +45,8 @@ public class CordovaIdentityPlugin extends CordovaPlugin {
     private IGlobalR mGlobalRStrings;
     // Callback context is a shared member among methods
     private CallbackContext callbackContext;
+
+    private static final String LOG_TAG = "NXdrive.OAuth2";
 
     @Override
     protected void pluginInitialize() {
@@ -106,11 +107,11 @@ public class CordovaIdentityPlugin extends CordovaPlugin {
                             @Nullable AuthorizationServiceConfiguration serviceConfiguration,
                             @Nullable AuthorizationException ex) {
                         if (ex != null) {
-                            Log.w(TAG, "Failed to retrieve configuration for " + idp.getName(), ex);
+                            Log.w(LOG_TAG, "Failed to retrieve configuration for " + idp.getName(), ex);
                             // Send out plugin
                             callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.ERROR, ex.getMessage()));
                         } else {
-                            Log.d(TAG, "configuration retrieved for " + idp.getName()
+                            Log.d(LOG_TAG, "configuration retrieved for " + idp.getName()
                                     + ", proceeding");
 
                             if (action.equals("logoutAsync")) {
@@ -169,7 +170,7 @@ public class CordovaIdentityPlugin extends CordovaPlugin {
                 .setLoginHint(loginHint)
                 .build();
 
-        Log.d(TAG, "Making auth request to " + serviceConfig.authorizationEndpoint);
+        Log.d(LOG_TAG, "Making auth request to " + serviceConfig.authorizationEndpoint);
 
         mAuthService.performAuthorizationRequest(
                 authRequest,
@@ -193,7 +194,7 @@ public class CordovaIdentityPlugin extends CordovaPlugin {
                 .setTokenEndpointAuthenticationMethod(ClientSecretBasic.NAME)
                 .build();
 
-        Log.d(TAG, "Making registration request to " + serviceConfig.registrationEndpoint);
+        Log.d(LOG_TAG, "Making registration request to " + serviceConfig.registrationEndpoint);
 
         mAuthService.performRegistrationRequest(
                 registrationRequest,
@@ -202,10 +203,10 @@ public class CordovaIdentityPlugin extends CordovaPlugin {
                     public void onRegistrationRequestCompleted(
                             @Nullable RegistrationResponse registrationResponse,
                             @Nullable AuthorizationException ex) {
-                        Log.d(TAG, "Registration request complete");
+                        Log.d(LOG_TAG, "Registration request complete");
                         if (registrationResponse != null) {
                             idp.setClientId(registrationResponse.clientId);
-                            Log.d(TAG, "Registration request complete successfully");
+                            Log.d(LOG_TAG, "Registration request complete successfully");
                             // Continue with the authentication
                             makeAuthRequest(registrationResponse.request.configuration, idp,
                                     new AuthState((registrationResponse)), null);

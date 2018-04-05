@@ -64,9 +64,9 @@ Licensed under the Apache License, Version 2.0.  See License.txt in the project 
     </config-file>
 
     <!-- dependency -->
-    <framework src="com.android.support:support-v4:+" />
-    <framework src="com.android.support:appcompat-v7:+" />
-    <framework src="com.android.support:design:22.2+" />
+    <framework src="com.android.support:support-v4:25.3.1+" />
+    <framework src="com.android.support:appcompat-v7:25.3.1+" />
+    <framework src="com.android.support:design:25.3.1+" />
     <framework src="src/android/build-extras.gradle" custom="true" type="gradleReference" />
 
     <!-- We split the resource strings into two parts: one group specific to one use and
